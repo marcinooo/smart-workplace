@@ -1,0 +1,23 @@
+
+logging:
+  version: 1
+  formatters:
+    formatter:
+      format: "[%(asctime)23s] [%(levelname)8s] [%(name)s] | %(message)s"
+  handlers:
+    console:
+      class: "logging.StreamHandler"
+      level: "INFO"
+      formatter: "formatter"
+  root:
+    level: "DEBUG"
+    handlers: ["console"]
+
+firebase:
+  credentials: "firebase-certificate.json"  # path to firebase certificate file
+  actuator_id: "CS3lQsyLJPu7HT8L0lJ9"
+  sensor_id: "DKX0aGDkqpDg2ZQDZtHl"
+
+air_purifier:
+  ip_address: "192.168.1.21"
+  checking_interval: 7200  # 2h in seconds

@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "esp8266-sensors-station"
+version = "0.1.0"
+description = ""
+authors = ["marcinooo <mawachacki@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+device-common-utils = {path = "../device_common_utils"}
+pytz = "^2023.3.post1"
+dependency-injector = {extras = ["yaml"], version = "^4.41.0"}
+requests = "^2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

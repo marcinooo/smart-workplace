@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "philips-air-purifier"
+version = "0.1.0"
+description = ""
+authors = ["marcinooo <mawachacki@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+philips-air-purifier-ac2889 = "^2.0.0"
+dependency-injector = {extras = ["yaml"], version = "^4.41.0"}
+firebase-admin = "^6.3.0"
+pytz = "^2023.3.post1"
+device-common-utils = {path = "../device_common_utils"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
