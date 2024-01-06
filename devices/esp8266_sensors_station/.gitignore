@@ -161,4 +161,4 @@ cython_debug/
 
 firebase-certificate.json
 config.yaml
-devices/esp8266_sensors_station\esp8266\cred.json
+esp8266/cred.json

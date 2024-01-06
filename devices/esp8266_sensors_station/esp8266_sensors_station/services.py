@@ -46,7 +46,6 @@ class RequesterService:
         self.is_running = True
 
         while self.is_running:
-
             data = self.get()
             self._callback(data)
             time.sleep(self.checking_interval)

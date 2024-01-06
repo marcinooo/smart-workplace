@@ -40,19 +40,19 @@ def update_sensor_document(data: Union[dict, None], firestore_service: common_se
 
     if data is not None:
 
-        logger.info('Data read successfully.')
+        logger.info('Data read successfully')
         logger.debug(f'Data: {data}')
 
-        timestamp = DatetimeWithNanoseconds.now(utc)
-        sensor = Sensor(name='Philips Air Purifier', timestamp=timestamp, data=data)
+        measurement = {'timestamp': DatetimeWithNanoseconds.now(utc), **data}
+        sensor = Sensor(name='Philips Air Purifier', measurements=[measurement])
         firestore_service.update(sensor)
 
         logger.info(f'Data saved successfully in document {firestore_service.sensor_id}.')
 
     else:
 
-        logger.info('Data read unsuccessfully.')
-        logger.debug(f'Data is None.')
+        logger.info('Data read unsuccessfully')
+        logger.debug(f'Data is None')
 
 
 @inject
@@ -73,13 +73,19 @@ def firestore_callback(
 ) -> None:
     """Callback triggered if firestore client detects any changes in remote firestore database."""
 
-    logger.info(f'Change detected in document {firestore_service.actuator_id}')
+    logger.debug(f'Change detected in document {firestore_service.actuator_id}')
+    logger.info(f'Received command: {actuator.command.action}')
 
-    if len(actuator.data) > 0:
-        status = air_purifier_service.set(**actuator.data)
-        logger.info(f'Data updated successfully on device.')
+    if actuator.command.action == 'SET':
+        logger.debug(f'Data to set {actuator.command.data}')
+        status = air_purifier_service.set(**actuator.command.data)
+        logger.info(f'Data updated successfully on device')
         logger.debug(f'Status: {status}')
 
+    else:
+        logger.info(f'Command unknown')
+
+    # Data are always refreshed (even if command is unknown)
     data = air_purifier_service.get()
     update_sensor_document(data, firestore_service)
 

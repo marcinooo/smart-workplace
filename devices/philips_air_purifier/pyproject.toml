@@ -2,7 +2,7 @@
 name = "philips-air-purifier"
 version = "0.1.0"
 description = ""
-authors = ["marcinooo <mawachacki@gmail.com>"]
+authors = ["marcinooo"]
 readme = "README.md"
 
 [tool.poetry.dependencies]

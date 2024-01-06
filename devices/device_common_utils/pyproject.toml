@@ -2,12 +2,13 @@
 name = "device-common-utils"
 version = "0.1.0"
 description = ""
-authors = ["marcinooo <mawachacki@gmail.com>"]
+authors = ["marcinooo"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
 google-api-core = "^2.15.0"
+firebase-admin = "^6.3.0"
 
 
 [build-system]

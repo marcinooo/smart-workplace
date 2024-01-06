@@ -2,7 +2,7 @@
 name = "esp8266-sensors-station"
 version = "0.1.0"
 description = ""
-authors = ["marcinooo <mawachacki@gmail.com>"]
+authors = ["marcinooo"]
 readme = "README.md"
 
 [tool.poetry.dependencies]

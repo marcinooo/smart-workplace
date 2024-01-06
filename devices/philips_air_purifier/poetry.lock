@@ -346,9 +346,10 @@ description = ""
 optional = false
 python-versions = "^3.10"
 files = []
-develop = true
+develop = false
 
 [package.dependencies]
+firebase-admin = "^6.3.0"
 google-api-core = "^2.15.0"
 
 [package.source]
@@ -1161,4 +1162,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "e33cd497fd871380426edbe99f6a389361d35efd2aa9998cfc4cefc3c509be5c"
+content-hash = "382d54c4acfeff41b5c3da26e15c4c31d3c67b619ae5818cff08497ee35fc9ca"
